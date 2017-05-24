@@ -6,7 +6,7 @@ var routes = require("./index.js");
 var api = require("./timestamp.js");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/public', express.static(process.cwd() + '/public'));
+app.use('/', express.static(process.cwd() + '/'));
 var port = process.env.PORT || 8080;
 routes(app);
 api(app);
