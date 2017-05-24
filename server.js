@@ -1,8 +1,14 @@
-var express = require("express")
-var app = express()
-app.get('/',function(req,res){
-    res.send('Hello World!')
-})
-app.listen(8080,function(){
-    console.log('Example app listening on port 8080!')
-})
+'use strict';
+var express = require("express");
+var bodyParser =require("body-parser");
+var routes = require("./routes/index.js");
+var api = require("./api/timestamp.js");
+var app = express();
+app.use(bodyParser.urlencoded({ extended:true }));
+app.use(bodyParser.json());
+app.use("/public", express.static(process.cwd() + "/public"));
+routes(app);
+api(app);
+app.listen(8080, function() {
+    console.log("server.js listening on port 8080...");
+});
