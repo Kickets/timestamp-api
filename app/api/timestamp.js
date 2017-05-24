@@ -5,11 +5,11 @@ module.exports = function(app){
         var date = req.params.query;
         var unix = null;
         var natural = null;
-        if (+date>=0){
+        if (+date >= 0){
             unix = +date;
             natural = unixToNat(unix);
         }
-        if(isNaN(+date)&&moment(date, "MMMM D, YYYY").isValid()){
+        if(isNaN(+date) && moment(date, "MMMM D, YYYY").isValid()){
             unix = natToUnix(date);
             natural = unixToNat(unix);
         }
