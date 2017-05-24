@@ -1,8 +1,8 @@
 'use strict';
 var express = require("express");
 var bodyParser =require("body-parser");
-var routes = require("./routes/index.js");
-var api = require("./api/timestamp.js");
+var routes = require("./routes.js");
+var api = require("./timestamp.js");
 var app = express();
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
