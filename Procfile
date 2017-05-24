@@ -1,1 +1,1 @@
-web: node timestamp.js
+web: node /api/timestamp.js
